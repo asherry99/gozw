@@ -6,26 +6,141 @@ package allclasses
 import (
 	"github.com/gozwave/gozw/cc/alarm"
 	alarmv2 "github.com/gozwave/gozw/cc/alarm-v2"
+	"github.com/gozwave/gozw/cc/antitheft"
+	antitheftv2 "github.com/gozwave/gozw/cc/antitheft-v2"
+	applicationcapability "github.com/gozwave/gozw/cc/application-capability"
 	applicationstatus "github.com/gozwave/gozw/cc/application-status"
 	"github.com/gozwave/gozw/cc/association"
+	associationcommandconfiguration "github.com/gozwave/gozw/cc/association-command-configuration"
 	associationv2 "github.com/gozwave/gozw/cc/association-v2"
+	avcontentdirectorymd "github.com/gozwave/gozw/cc/av-content-directory-md"
+	avcontentsearchmd "github.com/gozwave/gozw/cc/av-content-search-md"
+	avrendererstatus "github.com/gozwave/gozw/cc/av-renderer-status"
+	avtaggingmd "github.com/gozwave/gozw/cc/av-tagging-md"
+	barrieroperator "github.com/gozwave/gozw/cc/barrier-operator"
 	"github.com/gozwave/gozw/cc/basic"
+	basictariffinfo "github.com/gozwave/gozw/cc/basic-tariff-info"
 	basicv2 "github.com/gozwave/gozw/cc/basic-v2"
+	basicwindowcovering "github.com/gozwave/gozw/cc/basic-window-covering"
 	"github.com/gozwave/gozw/cc/battery"
+	centralscene "github.com/gozwave/gozw/cc/central-scene"
+	centralscenev2 "github.com/gozwave/gozw/cc/central-scene-v2"
+	centralscenev3 "github.com/gozwave/gozw/cc/central-scene-v3"
+	chimneyfan "github.com/gozwave/gozw/cc/chimney-fan"
+	climatecontrolschedule "github.com/gozwave/gozw/cc/climate-control-schedule"
 	"github.com/gozwave/gozw/cc/clock"
 	"github.com/gozwave/gozw/cc/configuration"
+	configurationv2 "github.com/gozwave/gozw/cc/configuration-v2"
+	configurationv3 "github.com/gozwave/gozw/cc/configuration-v3"
+	configurationv4 "github.com/gozwave/gozw/cc/configuration-v4"
+	controllerreplication "github.com/gozwave/gozw/cc/controller-replication"
+	crc16encap "github.com/gozwave/gozw/cc/crc-16-encap"
+	dcpconfig "github.com/gozwave/gozw/cc/dcp-config"
+	dcpmonitor "github.com/gozwave/gozw/cc/dcp-monitor"
+	deviceresetlocally "github.com/gozwave/gozw/cc/device-reset-locally"
+	"github.com/gozwave/gozw/cc/dmx"
 	doorlock "github.com/gozwave/gozw/cc/door-lock"
 	doorlocklogging "github.com/gozwave/gozw/cc/door-lock-logging"
 	doorlockv2 "github.com/gozwave/gozw/cc/door-lock-v2"
 	doorlockv3 "github.com/gozwave/gozw/cc/door-lock-v3"
 	doorlockv4 "github.com/gozwave/gozw/cc/door-lock-v4"
+	energyproduction "github.com/gozwave/gozw/cc/energy-production"
+	entrycontrol "github.com/gozwave/gozw/cc/entry-control"
+	firmwareupdatemd "github.com/gozwave/gozw/cc/firmware-update-md"
+	firmwareupdatemdv2 "github.com/gozwave/gozw/cc/firmware-update-md-v2"
+	firmwareupdatemdv3 "github.com/gozwave/gozw/cc/firmware-update-md-v3"
+	firmwareupdatemdv4 "github.com/gozwave/gozw/cc/firmware-update-md-v4"
+	firmwareupdatemdv5 "github.com/gozwave/gozw/cc/firmware-update-md-v5"
+	geographiclocation "github.com/gozwave/gozw/cc/geographic-location"
+	groupingname "github.com/gozwave/gozw/cc/grouping-name"
+	"github.com/gozwave/gozw/cc/hail"
+	hrvcontrol "github.com/gozwave/gozw/cc/hrv-control"
+	hrvstatus "github.com/gozwave/gozw/cc/hrv-status"
+	humiditycontrolmode "github.com/gozwave/gozw/cc/humidity-control-mode"
+	humiditycontrolmodev2 "github.com/gozwave/gozw/cc/humidity-control-mode-v2"
+	humiditycontroloperatingstate "github.com/gozwave/gozw/cc/humidity-control-operating-state"
+	humiditycontrolsetpoint "github.com/gozwave/gozw/cc/humidity-control-setpoint"
+	humiditycontrolsetpointv2 "github.com/gozwave/gozw/cc/humidity-control-setpoint-v2"
+	inclusioncontroller "github.com/gozwave/gozw/cc/inclusion-controller"
+	"github.com/gozwave/gozw/cc/indicator"
+	indicatorv2 "github.com/gozwave/gozw/cc/indicator-v2"
+	indicatorv3 "github.com/gozwave/gozw/cc/indicator-v3"
+	ipassociation "github.com/gozwave/gozw/cc/ip-association"
+	ipconfiguration "github.com/gozwave/gozw/cc/ip-configuration"
+	"github.com/gozwave/gozw/cc/irrigation"
+	"github.com/gozwave/gozw/cc/language"
+	"github.com/gozwave/gozw/cc/lock"
+	"github.com/gozwave/gozw/cc/mailbox"
 	manufacturerspecific "github.com/gozwave/gozw/cc/manufacturer-specific"
 	manufacturerspecificv2 "github.com/gozwave/gozw/cc/manufacturer-specific-v2"
+	"github.com/gozwave/gozw/cc/meter"
+	meterpulse "github.com/gozwave/gozw/cc/meter-pulse"
+	metertblconfig "github.com/gozwave/gozw/cc/meter-tbl-config"
+	metertblmonitor "github.com/gozwave/gozw/cc/meter-tbl-monitor"
+	metertblmonitorv2 "github.com/gozwave/gozw/cc/meter-tbl-monitor-v2"
+	metertblmonitorv3 "github.com/gozwave/gozw/cc/meter-tbl-monitor-v3"
+	metertblpush "github.com/gozwave/gozw/cc/meter-tbl-push"
+	meterv2 "github.com/gozwave/gozw/cc/meter-v2"
+	meterv3 "github.com/gozwave/gozw/cc/meter-v3"
+	meterv4 "github.com/gozwave/gozw/cc/meter-v4"
+	meterv5 "github.com/gozwave/gozw/cc/meter-v5"
+	mtpwindowcovering "github.com/gozwave/gozw/cc/mtp-window-covering"
+	multichannelassociationv2 "github.com/gozwave/gozw/cc/multi-channel-association-v2"
+	multichannelassociationv3 "github.com/gozwave/gozw/cc/multi-channel-association-v3"
+	multichannelv2 "github.com/gozwave/gozw/cc/multi-channel-v2"
+	multichannelv3 "github.com/gozwave/gozw/cc/multi-channel-v3"
+	multichannelv4 "github.com/gozwave/gozw/cc/multi-channel-v4"
+	multicmd "github.com/gozwave/gozw/cc/multi-cmd"
+	multiinstance "github.com/gozwave/gozw/cc/multi-instance"
+	multiinstanceassociation "github.com/gozwave/gozw/cc/multi-instance-association"
+	networkmanagementbasic "github.com/gozwave/gozw/cc/network-management-basic"
+	networkmanagementbasicv2 "github.com/gozwave/gozw/cc/network-management-basic-v2"
+	networkmanagementinclusion "github.com/gozwave/gozw/cc/network-management-inclusion"
+	networkmanagementinclusionv2 "github.com/gozwave/gozw/cc/network-management-inclusion-v2"
+	networkmanagementinclusionv3 "github.com/gozwave/gozw/cc/network-management-inclusion-v3"
+	networkmanagementinstallationmaintenancev2 "github.com/gozwave/gozw/cc/network-management-installation-maintenance-v2"
+	networkmanagementprimary "github.com/gozwave/gozw/cc/network-management-primary"
+	networkmanagementproxy "github.com/gozwave/gozw/cc/network-management-proxy"
+	networkmanagementproxyv2 "github.com/gozwave/gozw/cc/network-management-proxy-v2"
 	nodenaming "github.com/gozwave/gozw/cc/node-naming"
+	nodeprovisioning "github.com/gozwave/gozw/cc/node-provisioning"
 	notificationv3 "github.com/gozwave/gozw/cc/notification-v3"
 	notificationv4 "github.com/gozwave/gozw/cc/notification-v4"
 	notificationv5 "github.com/gozwave/gozw/cc/notification-v5"
+	notificationv6 "github.com/gozwave/gozw/cc/notification-v6"
+	notificationv7 "github.com/gozwave/gozw/cc/notification-v7"
+	notificationv8 "github.com/gozwave/gozw/cc/notification-v8"
+	"github.com/gozwave/gozw/cc/powerlevel"
+	"github.com/gozwave/gozw/cc/prepayment"
+	prepaymentencapsulation "github.com/gozwave/gozw/cc/prepayment-encapsulation"
+	"github.com/gozwave/gozw/cc/proprietary"
+	"github.com/gozwave/gozw/cc/protection"
+	protectionv2 "github.com/gozwave/gozw/cc/protection-v2"
+	ratetblconfig "github.com/gozwave/gozw/cc/rate-tbl-config"
+	ratetblmonitor "github.com/gozwave/gozw/cc/rate-tbl-monitor"
+	remoteassociation "github.com/gozwave/gozw/cc/remote-association"
+	remoteassociationactivate "github.com/gozwave/gozw/cc/remote-association-activate"
+	sceneactivation "github.com/gozwave/gozw/cc/scene-activation"
+	sceneactuatorconf "github.com/gozwave/gozw/cc/scene-actuator-conf"
+	scenecontrollerconf "github.com/gozwave/gozw/cc/scene-controller-conf"
+	"github.com/gozwave/gozw/cc/schedule"
+	scheduleentrylock "github.com/gozwave/gozw/cc/schedule-entry-lock"
+	scheduleentrylockv2 "github.com/gozwave/gozw/cc/schedule-entry-lock-v2"
+	scheduleentrylockv3 "github.com/gozwave/gozw/cc/schedule-entry-lock-v3"
+	schedulev3 "github.com/gozwave/gozw/cc/schedule-v3"
+	schedulev4 "github.com/gozwave/gozw/cc/schedule-v4"
+	screenattributes "github.com/gozwave/gozw/cc/screen-attributes"
+	screenattributesv2 "github.com/gozwave/gozw/cc/screen-attributes-v2"
+	screenmd "github.com/gozwave/gozw/cc/screen-md"
+	screenmdv2 "github.com/gozwave/gozw/cc/screen-md-v2"
 	"github.com/gozwave/gozw/cc/security"
+	security2 "github.com/gozwave/gozw/cc/security-2"
+	securitypanelmode "github.com/gozwave/gozw/cc/security-panel-mode"
+	securitypanelzone "github.com/gozwave/gozw/cc/security-panel-zone"
+	securitypanelzonesensor "github.com/gozwave/gozw/cc/security-panel-zone-sensor"
+	sensoralarm "github.com/gozwave/gozw/cc/sensor-alarm"
+	sensorbinary "github.com/gozwave/gozw/cc/sensor-binary"
+	sensorbinaryv2 "github.com/gozwave/gozw/cc/sensor-binary-v2"
 	sensorconfiguration "github.com/gozwave/gozw/cc/sensor-configuration"
 	sensormultilevel "github.com/gozwave/gozw/cc/sensor-multilevel"
 	sensormultilevelv10 "github.com/gozwave/gozw/cc/sensor-multilevel-v10"
@@ -38,6 +153,9 @@ import (
 	sensormultilevelv7 "github.com/gozwave/gozw/cc/sensor-multilevel-v7"
 	sensormultilevelv8 "github.com/gozwave/gozw/cc/sensor-multilevel-v8"
 	sensormultilevelv9 "github.com/gozwave/gozw/cc/sensor-multilevel-v9"
+	silencealarm "github.com/gozwave/gozw/cc/silence-alarm"
+	soundswitch "github.com/gozwave/gozw/cc/sound-switch"
+	"github.com/gozwave/gozw/cc/supervision"
 	switchall "github.com/gozwave/gozw/cc/switch-all"
 	switchbinary "github.com/gozwave/gozw/cc/switch-binary"
 	switchbinaryv2 "github.com/gozwave/gozw/cc/switch-binary-v2"
@@ -49,21 +167,30 @@ import (
 	switchmultilevelv3 "github.com/gozwave/gozw/cc/switch-multilevel-v3"
 	switchmultilevelv4 "github.com/gozwave/gozw/cc/switch-multilevel-v4"
 	switchtogglebinary "github.com/gozwave/gozw/cc/switch-toggle-binary"
+	switchtogglemultilevel "github.com/gozwave/gozw/cc/switch-toggle-multilevel"
+	tariffconfig "github.com/gozwave/gozw/cc/tariff-config"
+	tarifftblmonitor "github.com/gozwave/gozw/cc/tariff-tbl-monitor"
 	thermostatfanmode "github.com/gozwave/gozw/cc/thermostat-fan-mode"
 	thermostatfanmodev2 "github.com/gozwave/gozw/cc/thermostat-fan-mode-v2"
 	thermostatfanmodev3 "github.com/gozwave/gozw/cc/thermostat-fan-mode-v3"
 	thermostatfanmodev4 "github.com/gozwave/gozw/cc/thermostat-fan-mode-v4"
 	thermostatfanstate "github.com/gozwave/gozw/cc/thermostat-fan-state"
 	thermostatfanstatev2 "github.com/gozwave/gozw/cc/thermostat-fan-state-v2"
+	thermostatheating "github.com/gozwave/gozw/cc/thermostat-heating"
 	thermostatmode "github.com/gozwave/gozw/cc/thermostat-mode"
 	thermostatmodev2 "github.com/gozwave/gozw/cc/thermostat-mode-v2"
 	thermostatmodev3 "github.com/gozwave/gozw/cc/thermostat-mode-v3"
 	thermostatoperatingstate "github.com/gozwave/gozw/cc/thermostat-operating-state"
+	thermostatoperatingstatev2 "github.com/gozwave/gozw/cc/thermostat-operating-state-v2"
+	thermostatsetback "github.com/gozwave/gozw/cc/thermostat-setback"
 	thermostatsetpoint "github.com/gozwave/gozw/cc/thermostat-setpoint"
 	thermostatsetpointv2 "github.com/gozwave/gozw/cc/thermostat-setpoint-v2"
 	thermostatsetpointv3 "github.com/gozwave/gozw/cc/thermostat-setpoint-v3"
 	"github.com/gozwave/gozw/cc/time"
+	timeparameters "github.com/gozwave/gozw/cc/time-parameters"
 	timev2 "github.com/gozwave/gozw/cc/time-v2"
+	transportservice "github.com/gozwave/gozw/cc/transport-service"
+	transportservicev2 "github.com/gozwave/gozw/cc/transport-service-v2"
 	usercode "github.com/gozwave/gozw/cc/user-code"
 	usercodev2 "github.com/gozwave/gozw/cc/user-code-v2"
 	"github.com/gozwave/gozw/cc/version"
@@ -71,6 +198,15 @@ import (
 	versionv3 "github.com/gozwave/gozw/cc/version-v3"
 	wakeup "github.com/gozwave/gozw/cc/wake-up"
 	wakeupv2 "github.com/gozwave/gozw/cc/wake-up-v2"
+	windowcovering "github.com/gozwave/gozw/cc/window-covering"
+	zensornet "github.com/gozwave/gozw/cc/zensor-net"
+	zip6lowpan "github.com/gozwave/gozw/cc/zip-6lowpan"
+	zipgateway "github.com/gozwave/gozw/cc/zip-gateway"
+	zipnaming "github.com/gozwave/gozw/cc/zip-naming"
+	zipnd "github.com/gozwave/gozw/cc/zip-nd"
+	zipportal "github.com/gozwave/gozw/cc/zip-portal"
+	zwaveplusinfo "github.com/gozwave/gozw/cc/zwaveplus-info"
+	zwaveplusinfov2 "github.com/gozwave/gozw/cc/zwaveplus-info-v2"
 )
 
 func init() {
@@ -80,23 +216,112 @@ func init() {
 	notificationv3.Noop()
 	notificationv4.Noop()
 	notificationv5.Noop()
+	notificationv6.Noop()
+	notificationv7.Noop()
+	notificationv8.Noop()
 	applicationstatus.Noop()
+	associationcommandconfiguration.Noop()
 	association.Noop()
 	associationv2.Noop()
+	avcontentdirectorymd.Noop()
+	avcontentsearchmd.Noop()
+	avrendererstatus.Noop()
+	avtaggingmd.Noop()
+	basictariffinfo.Noop()
+	basicwindowcovering.Noop()
 	basic.Noop()
 	basicv2.Noop()
 	battery.Noop()
+	chimneyfan.Noop()
+	climatecontrolschedule.Noop()
 	clock.Noop()
 	configuration.Noop()
+	configurationv2.Noop()
+	configurationv3.Noop()
+	configurationv4.Noop()
+	controllerreplication.Noop()
+	crc16encap.Noop()
+	dcpconfig.Noop()
+	dcpmonitor.Noop()
 	doorlocklogging.Noop()
 	doorlock.Noop()
 	doorlockv2.Noop()
 	doorlockv3.Noop()
 	doorlockv4.Noop()
+	energyproduction.Noop()
+	firmwareupdatemd.Noop()
+	firmwareupdatemdv2.Noop()
+	firmwareupdatemdv3.Noop()
+	firmwareupdatemdv4.Noop()
+	firmwareupdatemdv5.Noop()
+	geographiclocation.Noop()
+	groupingname.Noop()
+	hail.Noop()
+	hrvcontrol.Noop()
+	hrvstatus.Noop()
+	indicator.Noop()
+	indicatorv2.Noop()
+	indicatorv3.Noop()
+	ipconfiguration.Noop()
+	language.Noop()
+	lock.Noop()
 	manufacturerspecific.Noop()
 	manufacturerspecificv2.Noop()
+	meterpulse.Noop()
+	metertblconfig.Noop()
+	metertblmonitor.Noop()
+	metertblmonitorv2.Noop()
+	metertblmonitorv3.Noop()
+	metertblpush.Noop()
+	meter.Noop()
+	meterv2.Noop()
+	meterv3.Noop()
+	meterv4.Noop()
+	meterv5.Noop()
+	mtpwindowcovering.Noop()
+	multichannelassociationv2.Noop()
+	multichannelassociationv3.Noop()
+	multichannelv2.Noop()
+	multichannelv3.Noop()
+	multichannelv4.Noop()
+	multicmd.Noop()
+	multiinstanceassociation.Noop()
+	multiinstance.Noop()
+	networkmanagementproxy.Noop()
+	networkmanagementproxyv2.Noop()
+	networkmanagementbasic.Noop()
+	networkmanagementbasicv2.Noop()
+	networkmanagementinclusion.Noop()
+	networkmanagementinclusionv2.Noop()
+	networkmanagementinclusionv3.Noop()
 	nodenaming.Noop()
+	powerlevel.Noop()
+	prepaymentencapsulation.Noop()
+	prepayment.Noop()
+	proprietary.Noop()
+	protection.Noop()
+	protectionv2.Noop()
+	ratetblconfig.Noop()
+	ratetblmonitor.Noop()
+	remoteassociationactivate.Noop()
+	remoteassociation.Noop()
+	sceneactivation.Noop()
+	sceneactuatorconf.Noop()
+	scenecontrollerconf.Noop()
+	scheduleentrylock.Noop()
+	scheduleentrylockv2.Noop()
+	scheduleentrylockv3.Noop()
+	screenattributes.Noop()
+	screenattributesv2.Noop()
+	screenmd.Noop()
+	screenmdv2.Noop()
+	securitypanelmode.Noop()
+	securitypanelzonesensor.Noop()
+	securitypanelzone.Noop()
 	security.Noop()
+	sensoralarm.Noop()
+	sensorbinary.Noop()
+	sensorbinaryv2.Noop()
 	sensorconfiguration.Noop()
 	sensormultilevel.Noop()
 	sensormultilevelv2.Noop()
@@ -109,6 +334,7 @@ func init() {
 	sensormultilevelv9.Noop()
 	sensormultilevelv10.Noop()
 	sensormultilevelv11.Noop()
+	silencealarm.Noop()
 	switchall.Noop()
 	switchbinary.Noop()
 	switchbinaryv2.Noop()
@@ -117,21 +343,30 @@ func init() {
 	switchmultilevelv3.Noop()
 	switchmultilevelv4.Noop()
 	switchtogglebinary.Noop()
+	switchtogglemultilevel.Noop()
+	tariffconfig.Noop()
+	tarifftblmonitor.Noop()
 	thermostatfanmode.Noop()
 	thermostatfanmodev2.Noop()
 	thermostatfanmodev3.Noop()
 	thermostatfanmodev4.Noop()
 	thermostatfanstate.Noop()
 	thermostatfanstatev2.Noop()
+	thermostatheating.Noop()
 	thermostatmode.Noop()
 	thermostatmodev2.Noop()
 	thermostatmodev3.Noop()
 	thermostatoperatingstate.Noop()
+	thermostatoperatingstatev2.Noop()
+	thermostatsetback.Noop()
 	thermostatsetpoint.Noop()
 	thermostatsetpointv2.Noop()
 	thermostatsetpointv3.Noop()
+	timeparameters.Noop()
 	time.Noop()
 	timev2.Noop()
+	transportservicev2.Noop()
+	transportservice.Noop()
 	usercode.Noop()
 	usercodev2.Noop()
 	version.Noop()
@@ -139,9 +374,46 @@ func init() {
 	versionv3.Noop()
 	wakeup.Noop()
 	wakeupv2.Noop()
+	zensornet.Noop()
+	zip6lowpan.Noop()
+	applicationcapability.Noop()
 	switchcolor.Noop()
 	switchcolorv2.Noop()
 	switchcolorv3.Noop()
+	schedule.Noop()
+	schedulev3.Noop()
+	schedulev4.Noop()
+	networkmanagementprimary.Noop()
+	zipnd.Noop()
+	deviceresetlocally.Noop()
+	centralscene.Noop()
+	centralscenev2.Noop()
+	centralscenev3.Noop()
+	ipassociation.Noop()
+	antitheft.Noop()
+	antitheftv2.Noop()
+	zwaveplusinfo.Noop()
+	zwaveplusinfov2.Noop()
+	zipgateway.Noop()
+	zipportal.Noop()
+	dmx.Noop()
+	barrieroperator.Noop()
+	networkmanagementinstallationmaintenancev2.Noop()
+	zipnaming.Noop()
+	mailbox.Noop()
+	windowcovering.Noop()
+	security2.Noop()
+	irrigation.Noop()
+	supervision.Noop()
+	humiditycontrolsetpoint.Noop()
+	humiditycontrolsetpointv2.Noop()
+	humiditycontrolmode.Noop()
+	humiditycontrolmodev2.Noop()
+	humiditycontroloperatingstate.Noop()
+	entrycontrol.Noop()
+	inclusioncontroller.Noop()
+	nodeprovisioning.Noop()
+	soundswitch.Noop()
 }
 
 func Noop() {}

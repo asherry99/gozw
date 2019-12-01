@@ -695,19 +695,20 @@ func (c *Client) interceptSecurityCommandClass(cmd serialapi.ApplicationCommand)
 		// 3. if it's the second half of a sequenced message, reassemble the payloads
 		// 4. emit the decrypted (possibly recombined) message back
 
-		var decrypted []byte
-		node, err := c.Node(cmd.SrcNodeID)
-		if err != nil {
-			return
-		}
+		// FIXME: This dosen't work, Or i don't understand it enough and think it doens't work?
+		// var decrypted []byte
+		// node, err := c.Node(cmd.SrcNodeID)
+		// if err != nil {
+		// 	return
+		// }
 
-		if !node.NetworkKeySent {
-			decrypted, err = c.securityLayer.DecryptMessage(cmd, true)
-		} else {
-			decrypted, err = c.securityLayer.DecryptMessage(cmd, false)
-		}
-
+		// if !node.NetworkKeySent {
+		// 	decrypted, err = c.securityLayer.DecryptMessage(cmd, true)
+		// } else {
+		// END FIXME:
+		decrypted, err := c.securityLayer.DecryptMessage(cmd, false)
 		if err != nil {
+			c.l.Error(err.Error())
 			return
 		}
 

@@ -25,6 +25,7 @@ type ILayer interface {
 	IsFailedNode(nodeID byte) (failed bool, err error)
 	RemoveFailedNode(nodeID byte) (removed bool, err error)
 	RequestNodeInfo(nodeInfo byte) (*NodeInfoFrame, error)
+	RequestNodeNeighborUpdate(nodeID byte) error
 	SoftReset()
 	FactoryReset()
 }

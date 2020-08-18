@@ -548,6 +548,25 @@ func (c *Client) SendDataSecure(dstNode byte, message encoding.BinaryMarshaler) 
 	return c.sendDataSecure(dstNode, message, false)
 }
 
+func (c *Client) RequestNodeNeighborUpdate(nodeID byte) error {
+	return c.serialAPI.RequestNodeNeighborUpdate(nodeID)
+}
+
+func (c *Client) RequestNodeNeighborUpdateForAllNodes() error {
+	var errs error
+	for _, node := range c.Nodes() {
+		if node.NodeID == 1 {
+			// Skip requesting update nearest neighbor of controller.
+			// TODO(Alex): Verify.. ^
+			continue
+		}
+		if err := c.serialAPI.RequestNodeNeighborUpdate(node.NodeID); err != nil {
+			errs = errors.Wrap(errs, err.Error())
+		}
+	}
+	return errs
+}
+
 func (c *Client) requestNonceForNode(dstNode byte) (security.Nonce, error) {
 	err := c.SendData(dstNode, &zwsec.NonceGet{})
 	if err != nil {
